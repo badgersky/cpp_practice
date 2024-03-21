@@ -11,7 +11,7 @@ public:
 
     ~Price() = default;
 
-    float get_price();
+    virtual float get_price();
 
     void set_price(float new_price);
 

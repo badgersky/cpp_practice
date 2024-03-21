@@ -11,4 +11,10 @@ public:
     ~PriceDiscount() = default;
 
     void print_price() override;
+
+    void set_discount(float new_discount);
+
+    float get_discount();
+
+    float get_price() override;
 };
