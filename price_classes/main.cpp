@@ -1,4 +1,3 @@
-#include <iostream>
 #include "PriceNormal.h"
 #include "PriceDiscount.h"
 

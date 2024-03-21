@@ -1,6 +1,6 @@
 #include "Price.h"
 
-class PriceNormal: public Price{
+class PriceNormal: public Price {
 public:
     PriceNormal(const string &product_name, float price): Price(product_name, price) {
     }

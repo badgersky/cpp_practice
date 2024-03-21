@@ -1,6 +1,6 @@
 #include "Price.h"
 
-class PriceDiscount:public Price {
+class PriceDiscount: public Price {
 protected:
     float discount;
 public:
