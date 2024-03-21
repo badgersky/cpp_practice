@@ -1,11 +1,11 @@
 #include "PriceDiscount.h"
 
 void PriceDiscount::print_price() {
-    cout << product_name << " - " << (price * discount) << " zl" << endl;
+    cout << product_name << " - " << (price - price * discount) << " zl" << endl;
 }
 
 float PriceDiscount::get_price() {
-    return discount * price;
+    return price - discount * price;
 }
 
 void PriceDiscount::set_discount(float new_discount) {
@@ -16,4 +16,8 @@ void PriceDiscount::set_discount(float new_discount) {
 
 float PriceDiscount::get_discount() {
     return discount;
+}
+
+PriceDiscount::PriceDiscount() {
+
 }

@@ -7,3 +7,7 @@ void PriceNormal::print_price() {
 float PriceNormal::get_price() {
     return price;
 }
+
+PriceNormal::PriceNormal() {
+
+}

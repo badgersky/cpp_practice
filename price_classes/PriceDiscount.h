@@ -1,9 +1,12 @@
+#pragma once
 #include "Price.h"
 
 class PriceDiscount: public Price {
 protected:
     float discount;
 public:
+    PriceDiscount();
+
     PriceDiscount(const string &product_name, float price, float discount) : Price(product_name, price),
                                                                             discount(discount) {
     }

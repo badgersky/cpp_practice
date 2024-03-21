@@ -1,7 +1,10 @@
+#pragma once
 #include "Price.h"
 
 class PriceNormal: public Price {
 public:
+    PriceNormal();
+
     PriceNormal(const string &product_name, float price): Price(product_name, price) {
     }
 

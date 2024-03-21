@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 
 using namespace std;
@@ -7,6 +8,8 @@ protected:
     string product_name;
     float price;
 public:
+    Price();
+
     Price(const string &product_name, float price): product_name(product_name), price(price) {};
 
     ~Price() = default;
