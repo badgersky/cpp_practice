@@ -1,6 +1,9 @@
 #include <iostream>
+#include "LettersPasswGenerator.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    auto lpg = LettersPasswGenerator();
+    string passw = lpg.generate_passw(10);
+    cout << passw << endl;
     return 0;
 }
