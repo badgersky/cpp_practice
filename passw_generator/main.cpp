@@ -4,6 +4,7 @@
 int main() {
     auto lpg = LettersPasswGenerator();
     string passw = lpg.generate_passw(10);
-    cout << passw << endl;
+    lpg.set_passw(passw);
+    cout << "-- " << lpg.get_passw() << " --" << endl;
     return 0;
 }

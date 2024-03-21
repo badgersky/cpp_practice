@@ -16,5 +16,7 @@ public:
 
     virtual string get_passw();
 
+    virtual void set_passw(string const &new_passw);
+
     virtual string generate_passw(unsigned size);
 };

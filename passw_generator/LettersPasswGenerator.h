@@ -9,6 +9,8 @@ public:
 
     string get_passw() override;
 
+    void set_passw(const string &new_passw) override;
+
     string generate_passw(unsigned size) override;
 };
 

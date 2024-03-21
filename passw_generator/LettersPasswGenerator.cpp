@@ -6,11 +6,12 @@ string LettersPasswGenerator::get_passw() {
     if (!passw.empty()) {
         return passw;
     }
+
 }
 
 string LettersPasswGenerator::generate_passw(unsigned int size) {
     string characters = uppercase + lowercase;
-    string passw = "";
+    string passw;
 
     int n = characters.size();
     int length = 0;
@@ -23,4 +24,8 @@ string LettersPasswGenerator::generate_passw(unsigned int size) {
     }
 
     return passw;
+}
+
+void LettersPasswGenerator::set_passw(const string &new_passw) {
+    PasswGenerator::set_passw(new_passw);
 }
