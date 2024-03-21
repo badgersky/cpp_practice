@@ -1,22 +1,58 @@
+#pragma once
 #include <iostream>
 #include "LettersPasswGenerator.h"
 #include "NumberPasswGenerator.h"
 #include "NumberLetterPasswGenerator.h"
+#include "main.h"
 
 int main() {
     srand(time(0));
 
-    auto nlpg = NumberLetterPasswGenerator();
-    auto npg = NumberPasswGenerator();
-    auto lpg = LettersPasswGenerator();
-    string passw1 = npg.generate_passw(10);
-    string passw2 = lpg.generate_passw(10);
-    string passw3 = nlpg.generate_passw(10);
-    npg.set_passw(passw1);
-    lpg.set_passw(passw2);
-    nlpg.set_passw(passw3);
+    unsigned option, size;
+    string passwd;
+    auto *gen = new PasswGenerator();
 
-    cout << npg.get_passw() << endl;
-    cout << lpg.get_passw() << endl;
-    cout << nlpg.get_passw() << endl;
+    print_options();
+    option = get_option();
+    size = gen->get_size();
+
+    if (option == 1) {
+        gen = new NumberPasswGenerator();
+    } else if (option == 2) {
+        gen = new LettersPasswGenerator();
+    } else if (option == 3) {
+        gen = new NumberLetterPasswGenerator();
+    } else {
+        print_error();
+        return 1;
+    }
+
+    passwd = gen->generate_passw(size);
+    gen->set_passw(passwd);
+    cout << "\nYour password:" << endl;
+    cout << gen->get_passw() << endl;
+}
+
+void print_error() {
+    cout << "wrong option" << endl;
+}
+
+void print_options() {
+    cout << "1 - number password" << endl;
+    cout << "2 - letter password" << endl;
+    cout << "3 - number-letter password" << endl;
+    cout << "\nYour choice:" << endl;
+}
+
+unsigned get_option() {
+    unsigned option;
+
+    cin >> option;
+    cin.ignore();
+
+    if (option < 1 || option > 3) {
+        return 4;
+    }
+
+    return option;
 }
