@@ -3,12 +3,7 @@
 #include <cstdlib>
 
 string LettersPasswGenerator::get_passw() {
-    if (!passw.empty()) {
-        return passw;
-    }
-
-    unsigned size = get_size();
-    set_passw(generate_passw(size));
+    return PasswGenerator::get_passw();
 }
 
 string LettersPasswGenerator::generate_passw(unsigned int size) {
@@ -24,6 +19,9 @@ string LettersPasswGenerator::generate_passw(unsigned int size) {
         passw += characters[i];
         length++;
     }
+
+    passw[0] = uppercase[rand() % (n / 2)];
+    passw[size] = lowercase[rand() % (n / 2)];
 
     return passw;
 }
