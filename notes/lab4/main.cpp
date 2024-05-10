@@ -33,6 +33,16 @@ T add(T a, T b) {
     return a + b;
 }
 
+template<typename T>
+char convert_save(T param) {
+    return *reinterpret_cast<char*>(&param);
+}
+
+template<typename T>
+T convert_load(const char* param) {
+    return *reinterpret_cast<const T*>(param);
+}
+
 int main() {
 //    data types conversion
 //    static cast - simple types
@@ -93,5 +103,11 @@ int main() {
     cout << t.first() << endl;
     cout << t.second() << endl;
     cout << t.third() << endl;
+
+    int x = 42;
+    char y = convert_save(x);
+    cout << y << endl;
+    x = convert_load<int>(&y);
+    cout << x << endl;
 }
 
